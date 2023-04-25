@@ -24,16 +24,6 @@ function pub_server(varargin)
         message = sprintf('%d %d', topic, data);
         fprintf('%s\n', message);
         zmq.core.send(socket, uint8(message));
-        delay(1);
-    end
-end
-
-function delay(seconds)
-    % pause the program
-    %
-    % Aguments:
-    %  seconds - delay time in seconds
-    tic;
-    while toc < seconds
+        pause(1);
     end
 end
